@@ -1,0 +1,165 @@
+:root {
+    --black-color: #000000;
+    --accent-color: #130505;
+    --white-color: rgb(255, 255, 255);
+    --background-color: #f4f4f4;
+    --section-bg: #e0e0e0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto, balgincond', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--accent-color);
+}
+
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('../fonts/blagincond.woff2') format('woff2'),
+         url('../fonts/balgincond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hero {
+    background: url('../img/logob.jpg') no-repeat center center/cover;
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.bienvenidos {
+    position: absolute;
+    bottom: 170px; /* Ajusta según necesidad */
+    left: 50px;
+    font-size: 1.3rem;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el texto y el ícono */
+    font-family: "blagincond", sans-serif;
+    letter-spacing: 1px;
+    z-index: 2; /* Asegura que el texto esté por encima de la niebla */
+}
+
+.bienvenidos::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -50px;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 30%, rgba(205, 200, 200, 0) 50%);
+    filter: blur(50px);
+    z-index: -1; /* Envía la niebla detrás del texto */
+}
+
+/* Estilos de los enlaces */
+.bienvenidos a {
+    text-decoration: none;
+    color: var(--black-color);
+    transition: 0.3s;
+}
+
+.bienvenidos a:hover {
+    color: var(--white-color);
+}
+
+/* Estilo para el icono de micrófono */
+.bienvenidos a i {
+    font-size: 2rem;
+    background: #ffd500;
+    color: var(--black-color);
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.bienvenidos a:hover i {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Fondo blanco con transparencia */
+    backdrop-filter: blur(7px); /* Efecto difuminado */
+    padding: 15px 0px;
+    text-align: center;
+	letter-spacing: 1px;
+    z-index: 1000;
+    font-family: "Antonio", sans-serif;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    height: 30px; /* Misma altura que el hover */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-menu li {
+    margin: 0px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--black-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 15px 15px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center; /* Asegura que el texto esté centrado */
+    justify-content: center;
+    min-width: 120px;
+    text-align: center;
+    height: 30px; /* Misma altura que la barra */
+}
+
+.nav-menu a:hover {
+    background: #ffd500;
+}
+
+.seccion {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+    background: var(--section-bg);
+    box-shadow: 0 0 10px rgba(189, 186, 186, 0.1);
+    margin-top: 80px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--black-color);
+    color: var(--white-color);
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
+    .nav-menu li {
+        margin: 10px 0;
+    }
+}
